@@ -48,7 +48,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	// TODO-9  uncomment the below method so that it matches /oauth/authorize and any request to /oauth/authorize to be authenticated.
 	// we dont want security for login page. so, below configuration is permitting any requests to /login
 
-	/*
+
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -66,7 +66,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			
 
 	}
-	*/
+
 	
 	
 	
