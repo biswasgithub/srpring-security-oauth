@@ -18,7 +18,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 	
-	/*
+
 	
 	@Bean
 	public WebClient webClient(ClientRegistrationRepository clientRep, OAuth2AuthorizedClientRepository authClientRepo) {
@@ -32,7 +32,7 @@ public class WebClientConfig {
 		return WebClient.builder().apply(oauth2.oauth2Configuration()).build();
 	}
 	
-	*/
+
 }
 	
 	

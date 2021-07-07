@@ -29,7 +29,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @Order(1)
-
+@EnableOAuth2Client
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 
