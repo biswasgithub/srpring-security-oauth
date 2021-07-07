@@ -1,0 +1,39 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 694424912843-55b1bl200s1tl8tgr7k07rji2ptd1772.apps.googleusercontent.com
+            client-secret: g6yJEFdW8BPwTYKqivcLJ_QU
+       
+      
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+  jpa:    
+    hibernate:
+      ddl-auto: update
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+    
+server:
+  port: 8443  
+  servlet:
+    context-path: /myapp
+    session:
+      cookie:
+        path: /myapp
+  ssl:
+    key-store-password: tomcat
+    key-store: classpath:mykeystore.p12
+    key-store-type: PKCS12
+    key-alias: tomcat
+
+
+
