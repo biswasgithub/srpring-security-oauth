@@ -35,22 +35,21 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory()
-				.withClient("way2learnappclientid")
-				.authorizedGrantTypes("password","authorization_code")
-				.secret(encoder().encode("secret"))
-				.scopes("user_info")
-				.redirectUris("https://localhost:8443/myapp/login/oauth2/code/way2learnappclient")
+				.withClient("way2learnappclientid")  // app-name
+				.authorizedGrantTypes("password","authorization_code")  // grant type: resource-owner password granted but not client credentials
+				.secret(encoder().encode("secret")) // password
+				.scopes("user_info")  // scope's for which this client is registered with authentication.
+				.redirectUris("https://localhost:8443/myapp/login/oauth2/code/way2learnappclient") // redirect uri
 				.autoApprove(false)
 				.and()
+				
 				.withClient("microclient")
 				.authorizedGrantTypes("password","authorization_code","client_credentials")
 				.secret(encoder().encode("secret"))
-				.scopes("user_info")
+				.scopes("user_info","read")
 				.redirectUris("https://localhost:8443/myapp/login/oauth2/code/way2learnappclient")
-				.autoApprove(false)
-							;
+				.autoApprove(false);
 	}
-	
 	
 
 	
@@ -65,7 +64,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		// this is for password grant type to generating the token
+		// this is for password grant type to generating the normal token
 				//endpoints.authenticationManager(authenticationManager); 
 				
 				// TODO-8 uncomment the below to inject tokenstore() and accessTokenConverter() into AuthorizationServerEndpointsConfigurer
@@ -120,7 +119,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	        return converter;
 	    }
 	    
-	   
+
 	
 	@Bean
     public BCryptPasswordEncoder encoder() {
