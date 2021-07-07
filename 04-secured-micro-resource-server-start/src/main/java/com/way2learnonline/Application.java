@@ -15,18 +15,18 @@ public class Application {
 	
 	//TODO-5 uncomment the below to configure RemoteTokenServices bean which will be used to verify the tokens
 	
-	/*
 	
+/*	
 	@Bean
 	public RemoteTokenServices tokenService(){
 		RemoteTokenServices tokenService = new RemoteTokenServices();
-		tokenService.setCheckTokenEndpointUrl("http://localhost:9999/auth/oauth/check_token");
+		tokenService.setCheckTokenEndpointUrl("http://localhost:8081/auth/oauth/check_token");
 		tokenService.setClientId("microclient");
 		tokenService.setClientSecret("secret");
 		
 		return tokenService;
 	}
 	
-	*/
+*/
 
 }

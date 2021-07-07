@@ -13,19 +13,19 @@ import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 @Configuration
 // TODO-1 uncomment the below annotation which will configure all the 
 //filters required on the resource server
-//@EnableResourceServer
+@EnableResourceServer
 
 //TODO-2 uncomment the below annotation as we want to use method level annotations also
 
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 
 // TODO-3 make the below class to extend ResourceServerConfigurerAdapter
-public class MyResourceServerConfiguration // extends ResourceServerConfigurerAdapter
+public class MyResourceServerConfiguration extends ResourceServerConfigurerAdapter
 	{
 	
 	
 	// TODO-4 uncomment the below to configure such that all request coming to this resource server should be fully authenticated
-	/*
+
 		
 	@Override 
     public void configure(HttpSecurity http) throws Exception {
@@ -33,13 +33,13 @@ public class MyResourceServerConfiguration // extends ResourceServerConfigurerAd
 	
     }
 	
-	*/
+
 	
 
 	// TODO-6 uncomment the below to give the reference of remotetokenservices to ResourceServerSecurityConfigurer
 	
-	/*
-	 
+	
+/* 
 	 	@Autowired
 	private RemoteTokenServices tokenServices;
 	
@@ -52,8 +52,8 @@ public class MyResourceServerConfiguration // extends ResourceServerConfigurerAd
 		
 	}
 	
-	*/
-	
+
+*/
 	
 	
 	
