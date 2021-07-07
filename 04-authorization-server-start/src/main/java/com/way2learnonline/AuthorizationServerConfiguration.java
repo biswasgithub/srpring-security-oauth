@@ -83,10 +83,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	
 	@Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-       //access without passing client-id and secret as authorization header
+       //access without passing username/password as authorization header
 		//oauthServer.checkTokenAccess("permitAll") ;  
-		// only valid client can access /check_token by passing client-id and secret as authorization header
-		oauthServer.checkTokenAccess("isAuthenticated()") ;             
+		// only authenticated client can access /check_token by passing username/password as authorization header
+		// only outheticated users can access /check_toen and /token_key url.
+				oauthServer.tokenKeyAccess("isAuthenticated()") 
+				.checkTokenAccess("isAuthenticated()") ;             
             
         
     }
